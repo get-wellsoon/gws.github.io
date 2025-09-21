@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Dr.Priyanka] - Physiotherapy Clinic in Chikhali</title>
+    <style>
+        /* --- General Styling --- */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background: #ffffff;
+            color: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #005f73; /* A professional dark teal */
+        }
+        #logo a {
+            text-decoration: none;
+            color: inherit;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 25px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #0a9396; /* A vibrant accent teal */
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background-image: linear-gradient(rgba(0, 95, 115, 0.7), rgba(0, 95, 115, 0.7)), url('https://via.placeholder.com/1500x700.png/005f73/FFFFFF?Text=Physiotherapy+Clinic');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            background-color: #94d2bd; /* A soft, inviting green */
+            color: #001219;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #e9d8a6;
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #005f73;
+        }
+
+        /* Services Section */
+        #services .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .service-card h3 {
+            color: #0a9396;
+            margin-top: 0;
+        }
+        
+        /* About Section */
+        #about {
+            background: #fff;
+        }
+        #about .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        #about img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Testimonials Section */
+        .testimonial-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            border-left: 5px solid #94d2bd;
+        }
+        .testimonial-card p {
+            font-style: italic;
+        }
+        .testimonial-card .author {
+            font-weight: bold;
+            text-align: right;
+            color: #005f73;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #eaf4f4;
+        }
+        #contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background: #0a9396;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background: #005f73;
+        }
+        
+        /* Footer */
+        footer {
+            background: #001219;
+            color: #e9d8a6;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; }
+            nav ul { flex-direction: column; text-align: center; margin-top: 1rem;}
+            nav ul li { margin: 10px 0; }
+            #hero h1 { font-size: 2.5rem; }
+            #about .about-content { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div id="logo"><a href="#">Dr. [Priyanka]</a></div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Relieving Pain, Restoring Motion</h1>
+                <p>Personalized Physiotherapy Care in the Heart of Navsari</p>
+                <a href="#contact" class="cta-button">Book an Appointment</a>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Sports Injury Rehab</h3>
+                        <p>Specialized programs to help athletes in Navsari
+                         recover from injuries and return to peak performance.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Back & Neck Pain</h3>
+                        <p>Effective treatment for chronic back and neck pain caused by posture, work, or injury.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Post-Surgical Rehab</h3>
+                        <p>Structured rehabilitation to restore strength, mobility, and function after surgery.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Neurological Physiotherapy</h3>
+                        <p>Care for patients with neurological conditions like stroke, Parkinson's, or spinal cord injuries.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Geriatric Care</h3>
+                        <p>Gentle physiotherapy to improve mobility, balance, and quality of life for senior citizens.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Home Visits</h3>
+                        <p>Convenient and professional physiotherapy services provided in the comfort of your own home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Dr. [Priyanka]</h2>
+                <div class="about-content">
+                    <img src=https://photos.app.goo.gl/B5q8bF5LGHy71jEV9" alt="Dr.[Priyanka]">
+                    <div>
+                        <p>I am Dr. [Priyanka], a dedicated physiotherapist with over [X] years of experience. I earned my [Your Degree, e.g., Master's in Physiotherapy] from [Your University] and have since helped hundreds of patients across Surat regain their mobility and live pain-free lives. My approach is patient-centered, focusing on creating personalized treatment plans that address the root cause of your issues. I believe in empowering my patients with knowledge and exercises to manage their health effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Patients Say</h2>
+                <div class="testimonial-card">
+                    <p> </p>
+                    <p class="author">- hehe it's hevit</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>it's still me</p>
+                    <p class="author">- Hevit</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Book Your Appointment</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Briefly describe your issue</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Request</button>
+                </form>
+                <div style="text-align: center; margin-top: 30px;">
+                    <p><strong>Clinic Address:</strong> [Seva Hospital Rankuva], Navsari, Gujarat</p>
+                    <p><strong>Phone / WhatsApp:</strong> [7096160582]</p>
+                    <p><strong>Email:</strong> [gws1308@gmail.com]</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Copyright © 2025 - Dr. [Priyanka] Physiotherapy Clinic | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
